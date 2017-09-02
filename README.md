@@ -6,3 +6,6 @@ The use of Convolutional Neural Networks (CNNs) have, after recent successes in 
 
 
 The data can be found here along with the corresponding annotation file: http://mirg.city.ac.uk/codeapps/the-magnatagatune-dataset
+
+Project Team:
+Alekseeva Irina, Klironomou Maria-Anna, Markou Eleni, Xenaki Anna           
