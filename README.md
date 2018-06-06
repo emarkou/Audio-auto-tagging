@@ -34,3 +34,19 @@ For eachaudio file, the below process was applied:
 - Storage of the above information in numpy array format.
 
 The result of the process is the transformation of the audio wave into a 2D matrix of features. This is displayed in the following figure for three tracks where the frequencies are shown increasing up the vertical axis, time is depicted on the horizontal axis and wave amplitude is represented as color intensity. 
+![Sound waves, Spectrograms & log Spectrograms](images/waves_spectro_logspectro.png)
+
+## Methodology
+The general idea for the CNN construction was to use the generated 2D numpy arrays as input into a chain of two or three convolutional layers (with or without max pooling), followed by a fully connected layer prior to the class prediction output (multi-hot vectors of 50 positions, one for each tag).
+
+- Activation Function: ReLu
+- Loss Function: sigmoid cross entropy with logits
+- Optimizer: Adaptive Moment Estimation, i.e. Adam
+
+The finnaly selected architecture is the following:
+
+## Results
+As mentioned previously, the auto tagging task is a multilabel classification problem. Thus, th ground truth labels provided along with the MagnaTagATune data are encoded as a 50x1 binary vector (multihot vector) where each dimension corresponds to a specific tag. Accordingly, the predictions are also represented as a vector of the same size, but in this case the values are not binary anymor; instead, the represent the probability of that label being assigned to the corresponding audio clip. 
+By setting a threshold at 0.5 the final set of labels was acquired.
+
+To assess the network's performance the Receiver Operating Characteristic Curve (AUC) was used which represents the probability that a random classifier will rank a randomly chosen positive instance higher that a randomly chosen negative one. Regarding the Accuracy and True Positive Rate per tag, it was observed that classes with few occurences display a higher accuracy percentage. This happens due to the high value of True Negatives. In contrast, classes with frequent appearance, such as "guitar", "techno" and "classical", may have a lower accuracy percentage but they are the ones that the network has learnt better, since they have the highest True Positive Rate (Recall).
