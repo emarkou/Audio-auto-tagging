@@ -63,6 +63,9 @@ As mentioned before, the initial tagging of the clips included in the MagnaTagAT
 
 Words were represented as vectors with the use of a word to vector model. The word embeddings model was generated with Google News word to vector pre-trained model, comprised of 300 dimensions. The Google News Model is a skip-gram model with negative sampling that is proven to capture a large number of precise syntactic and semantic word relationships. Visualization of music labels in a 2D image required the dimensionality reduction from 300 dimensions to 2. Instead of the Principal Component Analysis (PCA) method, the Distributed Stochastic Neighbor Embedding method (t-SNE) was used. The t-SNE achieves dimensionality reduction by preserving, as much as possible, the original semantic similarity of the tags. 
 
+![t-SNE visualization](images/t_SNE.png)
+
+
 It should be noted that the cost function used by the method is non-convex while the optimization algorithm is the gradient descent. Thus, different executions of the algorithm would lead to different results. To accomplish a more comprehensive and interactive visualization Tensorflow Projector was used. For this purpose, t-SNE algorithm was implemented twicel; once to reduce Google News model dimensions from 300 to 4 and a second time when Tensorflow Projector was used. 
 
 Studying the produced visualization, it becomes evident that the majority of the semantically close tags are clustered together. Some indicative examples of clusters include: 
