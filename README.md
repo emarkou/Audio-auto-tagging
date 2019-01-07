@@ -82,5 +82,3 @@ It is identifies that the provided dataset annotations in specific tracks may be
 Furthermore, it should be noted that the predicted labels in the majority of cases may be not be 100% accurate but are semantically close to the provided ones. For example, it is evident that in clip id 35334 the annotation "guitar" has been translated to "bass" and "violin" which are all stringed instruments. 
 
 In addition, it is observed that the model predicts suitable tags even in cases where they are not part of the initial annotations, as happens with clip id 24335. 
-
-Project Team Members: Aleskeeva Irina, Klironomou Marianna, Markou Eleni, Xenaki Anna
