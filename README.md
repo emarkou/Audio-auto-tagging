@@ -1,5 +1,9 @@
 # Development of a Convolutional Neural Network for multi label auto tagging of music audio files
 
+## Initial steps
+Download mp3 files and combine them using: cat mp3.zip.* > single_mp3.zip
+Extract files from subfolders: find . -mindepth 2 -type f -print -exec mv {} . \;
+
 ## Introduction 
 
 In general, music audio files can be accompanied by metadata related to their content such as free text description or tags. Tags are proved to be more useful as they provide a more direct description of the audio file and can be used in tasks such as classification per gender, artist, musical instrument etc in recommendation systems related to music. As not all audio files are accompanied by tags, the need of auto-tagging arises.
@@ -24,7 +28,7 @@ The available tags include, among others music genres (e.g. "pop", "alternative"
 
 ## Data preprocessing 
 ### Label reduction
-The tags of the original dataset displayed two main dysfunctionalities: synonym tags and extremely skewed tag distributions, i.e. existence of tags with rare occurence. To solve the above issues, in [1_label_reduction_and_files_renaming.py](1_label_reduction_and_files_renaming.py) and [aux_label_distribution.py](aux_label_distribution.py), synonym and similar tags were merged into a single tage and eventually the 50 most popular of the merged tags were kept. 
+The tags of the original dataset displayed two main dysfunctionalities: synonym tags and extremely skewed tag distributions, i.e. existence of tags with rare occurence. To solve the above issues, in [1_label_reduction_and_files_renaming.py](converters.py) and [aux_label_distribution.py](aux_label_distribution.py), synonym and similar tags were merged into a single tage and eventually the 50 most popular of the merged tags were kept. 
 
 ### Feature extraction
 For each audio file, the below process was applied:
