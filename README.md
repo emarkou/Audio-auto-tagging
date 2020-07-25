@@ -28,7 +28,7 @@ The available tags include, among others music genres (e.g. "pop", "alternative"
 
 ## Data preprocessing 
 ### Label reduction
-The tags of the original dataset displayed two main dysfunctionalities: synonym tags and extremely skewed tag distributions, i.e. existence of tags with rare occurence. To solve the above issues, in [1_label_reduction_and_files_renaming.py](label_reduction_and_files_renaming.py) and [aux_label_distribution.py](aux_label_distribution.py), synonym and similar tags were merged into a single tage and eventually the 50 most popular of the merged tags were kept. 
+The tags of the original dataset displayed two main dysfunctionalities: synonym tags and extremely skewed tag distributions, i.e. existence of tags with rare occurence. To solve the above issues, in [1_label_reduction_and_files_renaming.py](converters.py) and [aux_label_distribution.py](aux_label_distribution.py), synonym and similar tags were merged into a single tage and eventually the 50 most popular of the merged tags were kept. 
 
 ### Feature extraction
 For each audio file, the below process was applied:
