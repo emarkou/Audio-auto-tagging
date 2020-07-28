@@ -4,6 +4,8 @@
 import librosa
 import numpy as np
 import os
+from pathlib import Path
+
 
 def extract_feature(file_name):
     '''
@@ -15,10 +17,14 @@ def extract_feature(file_name):
     return features
 
 def generate_spectrogram(directory_files):
+    spectrogram_save_path = os.path.join(Path(directory_files).parent, 'wav_to_npy')
+
     filenames = os.listdir(directory_files)
-    if not os.path.isdir(os.join.path(directory_files, "wav_to_npy")):
-        os.mkdir(os.join.path(directory_files, "wav_to_npy"))
+    if not os.path.isdir(spectrogram_save_path):
+        os.mkdir(spectrogram_save_path)
     for wav_file in filenames:
-        npy = extract_feature(os.path.abspath(wav_file))
-        dest = os.join.path(directory_files, "wav_to_npy", str(os.path.splitext(wav_file)[0]))
-        np.save(dest, npy)
+        # TODO: find why some files are not renamed
+        if wav_file[0].isdigit():
+            npy = extract_feature(os.path.join(directory_files, wav_file))
+            dest = os.path.join(spectrogram_save_path, str(os.path.splitext(wav_file)[0]))
+            np.save(dest, npy)
