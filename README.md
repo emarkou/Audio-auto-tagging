@@ -1,4 +1,5 @@
 # Development of a Convolutional Neural Network for multi label auto tagging of music audio files
+[![HitCount](http://hits.dwyl.com/emarkou/Audio-auto-tagging.svg)](http://hits.dwyl.com/emarkou/Audio-auto-tagging)
 
 ## Initial steps
 Download mp3 files and combine them using: cat mp3.zip.* > single_mp3.zip
