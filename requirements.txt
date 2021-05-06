@@ -65,7 +65,7 @@ feather-format==0.4.0
 filelock==3.0.4
 Fiona==1.8.4
 Flask==1.0.2
-Flask-Cors==3.0.4
+Flask-Cors==3.0.9
 funcsigs==1.0.2
 functools32==3.2.3.post2
 futures==3.2.0
