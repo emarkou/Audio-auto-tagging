@@ -138,7 +138,7 @@ numpy==1.16.6
 numpydoc==0.8.0
 odo==0.5.1
 olefile==0.45.1
-opencv-python==4.0.0.21
+opencv-python==4.2.0.32
 openpyxl==2.5.3
 packaging==17.1
 palettable==3.1.1
