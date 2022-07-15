@@ -54,7 +54,7 @@ datashape==0.5.4
 decorator==4.4.2
 descartes==1.1.0
 distlib==0.3.0
-distributed==1.21.8
+distributed==2021.10.0
 docutils==0.14
 entrypoints==0.2.3
 enum34==1.1.6
